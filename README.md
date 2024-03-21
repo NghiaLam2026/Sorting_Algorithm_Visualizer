@@ -10,4 +10,4 @@ This sorting visualizer aim to transforms complex sorting algorithms into an int
 <br>
 <br>
 <br>
-### LIVE VERSION: https://nghialam2026.github.io/Sorting-Algorithm-Visualizer/
+### LIVE WEBSITE: https://nghialam2026.github.io/Sorting-Algorithm-Visualizer/

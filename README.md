@@ -4,7 +4,7 @@ This sorting visualizer aim to transforms complex sorting algorithms into an int
 <br>
 <br>
 <br>
-*### GIF EXAMPLE *:
+### GIF EXAMPLE:
 
 ![sorting_visualizer](https://github.com/NghiaLam2026/Sorting-Algorithm-Visualizer/assets/118234173/b5f70890-0515-4e99-9579-b4b6f94cf005)
 <br>

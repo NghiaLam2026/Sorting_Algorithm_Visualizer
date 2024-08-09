@@ -32,9 +32,9 @@ If you have any questions or feedback, please feel free to reach out:
 - **GitHub**: [NghiaLam2026](https://github.com/NghiaLam2026)
 - **Email**: [nghiatlam03@gmail.com](mailto:nghiatlam03@gmail.com)
 
-## GIF EXAMPLE:
+## GIF example:
 
 ![sorting_visualizer](https://github.com/NghiaLam2026/Sorting-Algorithm-Visualizer/assets/118234173/b5f70890-0515-4e99-9579-b4b6f94cf005)
 <br>
 <br>
-### LIVE WEBSITE: https://nghialam2026.github.io/Sorting-Algorithm-Visualizer/
+## Live website: https://nghialam2026.github.io/Sorting-Algorithm-Visualizer/

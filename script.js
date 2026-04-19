@@ -3,6 +3,14 @@ const startSortButton = document.getElementById('start-sort');
 const reset = document.getElementById('reset');
 const option = document.getElementById('option')
 
+let isSorting = false;
+
+function setSortingUi(busy) {
+    isSorting = busy;
+    startSortButton.disabled = busy;
+    option.disabled = busy;
+}
+
 function delay(time){
     return new Promise(resolve => setTimeout(resolve, time));
 }
@@ -199,42 +207,38 @@ function Clear_glow_effect() {
 
 // Event listener for the sort button
 startSortButton.addEventListener('click', () => {
+    if (isSorting) return;
+
     const selected_algorithm = option.value;
-    if (selected_algorithm == "bubble"){
-        Bubble_Sort(array).then(() => {
-            Apply_glow_effect().then(() => {
-                setTimeout(Clear_glow_effect, 5000)
-            });
-        });
+    let sortPromise;
+    switch (selected_algorithm) {
+        case "bubble":
+            sortPromise = Bubble_Sort(array);
+            break;
+        case "insertion":
+            sortPromise = Insertion_Sort(array);
+            break;
+        case "selection":
+            sortPromise = Selection_Sort(array);
+            break;
+        case "quick":
+            sortPromise = Quick_Sort(array);
+            break;
+        case "merge":
+            sortPromise = Merge_Sort(array);
+            break;
+        default:
+            return;
     }
-    if (selected_algorithm == "insertion"){
-        Insertion_Sort(array).then(() => {
+
+    setSortingUi(true);
+    sortPromise
+        .then(() =>
             Apply_glow_effect().then(() => {
-                setTimeout(Clear_glow_effect, 5000)
-            });
-        });
-    }
-    if (selected_algorithm == "selection"){
-        Selection_Sort(array).then(() => {
-            Apply_glow_effect().then(() => {
-                setTimeout(Clear_glow_effect, 5000)
-            });
-        });
-    }
-    if (selected_algorithm == "quick"){
-        Quick_Sort(array).then(() => {
-            Apply_glow_effect().then(() => {
-                setTimeout(Clear_glow_effect, 5000)
-            });
-        });
-    }
-    if (selected_algorithm == "merge"){
-        Merge_Sort(array).then(() => {
-            Apply_glow_effect().then(() => {
-                setTimeout(Clear_glow_effect, 5000)
-            });
-        });
-    }
+                setTimeout(Clear_glow_effect, 5000);
+            })
+        )
+        .finally(() => setSortingUi(false));
 });
 
 // Initial display
